@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basic Fundamentals of Computer — A Complete Guide by rishuwrites</title>
+  <meta name="description" content="A complete, student-friendly guide to the basic fundamentals of computers: definition, components, hardware vs software, memory, types, uses, FAQs and glossary." />
+  <meta name="keywords" content="basic fundamentals of computer, fundamentals of computer, computer basics, hardware software, input output process storage, CPU RAM ROM, types of computers" />
+  
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20 90 L30 80 L70 40 L85 25 L75 15 L60 30 L20 70 Z' fill='%2393c5fd'/%3E%3Cpath d='M65 25 L75 15 L90 30 L80 40 Z' fill='%236ee7b7'/%3E%3C/svg%3E" type="image/svg+xml">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Basic Fundamentals of Computer — A Complete Guide" />
+  <meta property="og:description" content="Learn the fundamentals of computer systems with clean explanations, diagrams, examples, and an FAQ. Perfect for students and beginners." />
+  <meta property="og:image" content="https://rishuwrites.com/images/computer-fundamentals-cover.jpg" />
+  <meta property="og:site_name" content="rishuwrites" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Basic Fundamentals of Computer — A Complete Guide" />
+  <meta name="twitter:description" content="Student-friendly fundamentals of computer: IPO cycle, CPU, memory, storage, software, types, uses, FAQs." />
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Basic Fundamentals of Computer — A Complete Guide",
+    "description": "A complete, student-friendly guide to the basic fundamentals of computers.",
+    "author": {"@type": "Person", "name": "Rishu"},
+    "publisher": {"@type": "Organization", "name": "rishuwrites", "logo": {"@type": "ImageObject", "url": "https://rishuwrites.com/images/logo.png"}},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rishuwrites.com/blog/basic-fundamentals-of-computer"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question","name": "What are the four basic operations of a computer?","acceptedAnswer": {"@type": "Answer","text": "Input, Processing, Output and Storage (IPOS)."}},
+      {"@type": "Question","name": "What is the difference between hardware and software?","acceptedAnswer": {"@type": "Answer","text": "Hardware is the physical part of a computer you can touch. Software is the set of programs/instructions that run on hardware."}},
+      {"@type": "Question","name": "What does CPU stand for and what does it do?","acceptedAnswer": {"@type": "Answer","text": "CPU stands for Central Processing Unit. It executes instructions and controls all operations; it includes ALU, Control Unit and registers/cache."}},
+      {"@type": "Question","name": "What is the difference between RAM and ROM?","acceptedAnswer": {"@type": "Answer","text": "RAM is volatile memory used for temporary data while the computer is on. ROM is non-volatile and stores firmware that rarely changes."}}
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg: #0b1020;         /* Dark indigo */
+      --card: #121835;         /* Card surface */
+      --muted: #98a2b3;       /* Muted text */
+      --text: #f1f5f9;         /* Main text */
+      --primary: #6ee7b7;       /* Mint */
+      --accent: #93c5fd;       /* Soft blue */
+      --ring: rgba(147,197,253,.4);
+      --radius: 18px;
+      --maxw: 1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text); 
+      /* Decorative background gradients */
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(147,197,253,.15), transparent 40%),
+                  radial-gradient(1200px 600px at 90% -10%, rgba(110,231,183,.12), transparent 40%),
+                  var(--bg);
+      line-height:1.6; letter-spacing:.2px;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw); margin-inline:auto; padding:24px}
+    .skip{position:absolute; left:-9999px}
+    .skip:focus{left:12px; top:12px; z-index:100; background:#000; color:#fff; padding:8px 12px; border-radius:10px}
+
+    header.hero{
+      padding:64px 0 32px; position:relative; overflow:hidden;
+    }
+    .brand{display:flex; align-items:center; gap:12px; color:var(--muted); font-weight:600}
+    .logo{width:36px; height:36px; border-radius:10px; background: linear-gradient(135deg, var(--accent), var(--primary)); box-shadow:0 10px 28px rgba(147,197,253,.25)}
+
+    .hero h1{font-size: clamp(28px, 4vw, 46px); line-height:1.15; margin:14px 0;}
+    .hero p{max-width: 70ch; color: var(--muted); font-size:1.05rem}
+    .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+    .btn{border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); color:#fff; padding:12px 16px; border-radius:14px; cursor:pointer}
+    .btn.primary{border-color:transparent; background: linear-gradient(135deg, var(--primary), #4ade80); color:#041014; font-weight:700}
+    .btn:focus{outline:3px solid var(--ring)}
+
+    .grid{display:grid; gap:18px}
+    @media (min-width:900px){ .grid.cols-3{grid-template-columns: 280px 1fr 1fr} }
+    @media (max-width:899px){ .grid.cols-3{grid-template-columns: 1fr} }
+    
+    .main-content { grid-column: span 2; }
+
+    nav.toc{position:sticky; top:16px; align-self:start; background: rgba(18,24,53,.7); backdrop-filter: blur(6px); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:16px}
+    nav.toc h3{margin:0 0 8px 0; font-size:1rem; color:var(--accent)}
+    nav.toc ul{list-style:none; margin:0; padding:0}
+    nav.toc li{margin:6px 0}
+    nav.toc a{color:var(--text)}
+
+    .card{background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding:20px}
+    .card h2, .card h3{margin-top:0}
+
+    .pill{display:inline-block; padding:4px 10px; border-radius:999px; font-size:.85rem; background:rgba(147,197,253,.15); color:#e2e8f0; border:1px solid rgba(147,197,253,.25)}
+
+    .kpi{display:grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap:12px; margin-top:18px}
+    .kpi .k{background:rgba(255,255,255,.04); padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.08)}
+
+    .io-grid{display:grid; gap:12px}
+    @media (min-width:700px){ .io-grid{grid-template-columns: repeat(4, 1fr)} }
+
+    .table{width:100%; border-collapse: collapse; margin-top:10px}
+    .table th, .table td{border:1px solid rgba(255,255,255,.08); padding:12px; vertical-align:top}
+    .table th{background: rgba(255,255,255,.06); text-align:left}
+
+    .faq details{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:12px 16px; margin:10px 0}
+    .faq summary{cursor:pointer; font-weight:600}
+
+    .page-footer{color:var(--muted); font-size:.95rem; padding:36px 0 60px}
+    .breadcrumbs{color:var(--muted); font-size:.9rem}
+    .breadcrumbs a{color:var(--accent)}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  
+  <header class="hero container">
+    <div class="brand"><div class="logo" aria-hidden="true"></div><span>rishuwrites</span></div>
+    <h1>Basic Fundamentals of Computer</h1>
+    <p>Computers are everywhere—classrooms, offices, shops, hospitals and homes. This page gives you a crystal-clear, exam-friendly introduction to the core concepts: what a computer is, how it works (IPOS model), components (CPU, memory, storage), software, types of computers, uses, and key terms.</p>
+    <div class="cta">
+      <a class="btn primary" href="#toc">Start Learning</a>
+      <button class="btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save as PDF</button>
+    </div>
+  </header>
+
+  <main class="container grid cols-3" id="main">
+    <nav class="toc card" id="toc" aria-label="Table of contents">
+      <h3>On this page</h3>
+      <ul>
+        <li><a href="#definition">1. What is a Computer?</a></li>
+        <li><a href="#characteristics">2. Characteristics</a></li>
+        <li><a href="#components">3. Components: Hardware & Software</a></li>
+        <li><a href="#ipos">4. IPOS Cycle</a></li>
+        <li><a href="#types">5. Types of Computers</a></li>
+        <li><a href="#importance">6. Importance & Applications</a></li>
+        <li><a href="#security">7. Basic Safety & Best Practices</a></li>
+        <li><a href="#glossary">8. Quick Glossary</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+      </ul>
+    </nav>
+
+    <article class="card main-content">
+      <p class="breadcrumbs" aria-label="Breadcrumbs"><a href="#">Home</a> › <span>Basic Fundamentals of Computer</span></p>
+
+      <section id="definition">
+        <h2>1. What is a Computer?</h2>
+        <p>A <strong>computer</strong> is an electronic device that accepts <em>input</em>, processes it using instructions, produces <em>output</em>, and can <em>store</em> results for future use.</p>
+        <div class="kpi">
+          <div class="k"><strong>Input</strong><br />Raw data or commands.</div>
+          <div class="k"><strong>Process</strong><br />CPU follows instructions to transform data.</div>
+          <div class="k"><strong>Output</strong><br />Results shown on screen, printed, or played as sound.</div>
+          <div class="k"><strong>Storage</strong><br />Save data on HDD/SSD/Cloud for later.</div>
+        </div>
+      </section>
+
+      <section id="characteristics">
+        <h2>2. Key Characteristics</h2>
+        <ul>
+          <li><strong>Speed:</strong> Performs millions of operations per second.</li>
+          <li><strong>Accuracy:</strong> Delivers correct results with correct input.</li>
+          <li><strong>Automation:</strong> Executes tasks automatically once instructed.</li>
+          <li><strong>Storage:</strong> Holds large amounts of data and software.</li>
+          <li><strong>Versatility:</strong> Can switch between tasks quickly.</li>
+          <li><strong>Connectivity:</strong> Networks and the internet connect computers worldwide.</li>
+        </ul>
+      </section>
+
+      <section id="components">
+        <h2>3. Components: Hardware &amp; Software</h2>
+        <h3 class="pill">Hardware (Physical parts)</h3>
+        <div class="io-grid">
+          <div class="card"><strong>Input Devices</strong><br />Keyboard, mouse, scanner, microphone, webcam.</div>
+          <div class="card"><strong>Output Devices</strong><br />Monitor, printer, speakers, projector.</div>
+          <div class="card"><strong>Processing</strong><br />CPU = ALU (calculations), CU (control), Registers & Cache (fast storage).</div>
+          <div class="card"><strong>Storage</strong><br />Primary: RAM, ROM. Secondary: HDD, SSD, USB drive, Memory card.</div>
+        </div>
+        <h3 class="pill" style="margin-top:14px">Software (Programs & Instructions)</h3>
+        <table class="table" aria-label="Software categories table">
+          <thead>
+            <tr><th>Category</th><th>Purpose</th><th>Examples</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>System Software</strong></td><td>Runs and manages hardware.</td><td>Operating Systems (Windows, macOS, Linux), Device Drivers, Utilities</td></tr>
+            <tr><td><strong>Application Software</strong></td><td>Helps users perform tasks.</td><td>MS Word, Excel, PowerPoint, Browsers, Media Players</td></tr>
+            <tr><td><strong>Programming Software</strong></td><td>Used to create other software.</td><td>Compilers, Interpreters, IDEs (VS Code)</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top:16px">Memory Overview</h3>
+        <ul>
+          <li><strong>RAM (Random Access Memory):</strong> Volatile, fast, temporary workspace.</li>
+          <li><strong>ROM (Read Only Memory):</strong> Non-volatile, stores firmware/boot instructions.</li>
+          <li><strong>Cache:</strong> Very fast small memory close to CPU to speed up processing.</li>
+          <li><strong>Secondary Storage:</strong> HDD/SSD/Optical/USB; non-volatile, large capacity.</li>
+        </ul>
+      </section>
+
+      <section id="ipos">
+        <h2>4. IPOS Cycle (Input → Process → Output → Storage)</h2>
+        <p>The IPOS model explains how data flows through a computer system:</p>
+        <ol>
+          <li><strong>Input:</strong> Data is entered using input devices.</li>
+          <li><strong>Process:</strong> CPU applies instructions (software) to data.</li>
+          <li><strong>Output:</strong> Results are presented through output devices.</li>
+          <li><strong>Storage:</strong> Results and data are saved permanently for future use.</li>
+        </ol>
+      </section>
+
+      <section id="types">
+        <h2>5. Types of Computers</h2>
+        <ul>
+          <li><strong>Supercomputers:</strong> Extremely powerful; used in research, weather, simulations.</li>
+          <li><strong>Mainframes:</strong> Handle large-scale transactions for banks and enterprises.</li>
+          <li><strong>Minicomputers:</strong> Mid-range (historical/legacy) systems for organizations.</li>
+          <li><strong>Microcomputers (PCs):</strong> Desktops for personal/office use.</li>
+          <li><strong>Portable Devices:</strong> Laptops, tablets, smartphones—computing on the go.</li>
+        </ul>
+      </section>
+
+      <section id="importance">
+        <h2>6. Importance &amp; Applications</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px">
+          <div class="card"><strong>Education</strong><br />E-learning, digital notes, research, online exams.</div>
+          <div class="card"><strong>Business</strong><br />Accounting, billing, data analysis, e-commerce.</div>
+          <div class="card"><strong>Healthcare</strong><br />EHR, diagnostics, telemedicine, lab systems.</div>
+          <div class="card"><strong>Communication</strong><br />Email, chat, video calls, social media.</div>
+          <div class="card"><strong>Entertainment</strong><br />Gaming, music, movies, streaming.</div>
+        </div>
+      </section>
+
+      <section id="security">
+        <h2>7. Basic Safety &amp; Best Practices</h2>
+        <ul>
+          <li>Use strong passwords and enable multi-factor authentication.</li>
+          <li>Keep your operating system and antivirus updated.</li>
+          <li>Back up important data to an external drive or cloud.</li>
+          <li>Beware of phishing links and email attachments.</li>
+          <li>Follow ergonomic practices: correct posture, screen height, breaks.</li>
+        </ul>
+      </section>
+
+      <section id="glossary">
+        <h2>8. Quick Glossary</h2>
+        <table class="table" aria-label="Glossary">
+          <thead><tr><th>Term</th><th>Simple Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>ALU</td><td>Part of CPU that does maths/logic.</td></tr>
+            <tr><td>CU</td><td>Controls the sequence of operations.</td></tr>
+            <tr><td>Bit/Byte</td><td>Units of digital data (8 bits = 1 byte).</td></tr>
+            <tr><td>Boot</td><td>Starting the computer and loading the OS.</td></tr>
+            <tr><td>Driver</td><td>Software that helps OS talk to hardware.</td></tr>
+            <tr><td>File/Folder</td><td>Data container / directory that holds files.</td></tr>
+            <tr><td>GUI</td><td>Graphical user interface (windows, icons, menus).</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="faqs" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>What are the four basic operations of a computer?</summary>
+          <p><strong>IPOS</strong>: Input, Processing, Output and Storage.</p>
+        </details>
+        <details>
+          <summary>Difference between hardware and software?</summary>
+          <p><strong>Hardware</strong> is physical; <strong>software</strong> is the program/instructions.</p>
+        </details>
+        <details>
+          <summary>What does CPU do?</summary>
+          <p>It executes instructions, performs calculations (ALU), and controls operations (CU).</p>
+        </details>
+        <details>
+          <summary>RAM vs ROM?</summary>
+          <p><strong>RAM</strong> is temporary and fast; <strong>ROM</strong> is permanent and stores firmware.</p>
+        </details>
+      </section>
+      
+      <footer style="border-top: 1px solid rgba(255,255,255,.08); padding-top: 16px; margin-top: 24px;">
+        <p style="margin: 0;">© <span id="year"></span> rishuwrites • <a href="#">Contact</a> • <a href="#">Privacy</a></p>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="container page-footer">
+    <p>Tip: Click the <em>Print / Save as PDF</em> button to download this page as a handout for your class.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // TOC highlight on scroll (progressive enhancement)
+    const sections = [...document.querySelectorAll('article section[id]')];
+    const links = [...document.querySelectorAll('nav.toc a')];
+    const byId = Object.fromEntries(links.map(a => [a.getAttribute('href').slice(1), a]));
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          links.forEach(l=>l.style.fontWeight='');
+          const id = e.target.id;
+          if(byId[id]) byId[id].style.fontWeight='700';
+        }
+      });
+    },{rootMargin:'-40% 0px -55% 0px', threshold: 0.01});
+    sections.forEach(s=>obs.observe(s));
+  </script>
+</body>
+</html>
